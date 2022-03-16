@@ -12,5 +12,7 @@ public class Solucion4Guia1 {
         mask = 1<<x-1;
         i |= mask;
     }
+
+    //hola probando commit
 }
 
