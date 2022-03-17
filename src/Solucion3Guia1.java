@@ -2,8 +2,15 @@ import java.util.Scanner;
 
 public class Solucion3Guia1 {
 
-    public static int datos = 0;
-
+    private int datos;
+    
+    public Solucion3Guia1(){
+    
+        datos = 0;
+        
+    }
+    
+    /*
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -27,14 +34,15 @@ public class Solucion3Guia1 {
         addDepositoDeLiquidos(nivelDeposito);
         calcularDepositoDeLiquidos();
     }
+    */
 
-    public static void addDepositoDeLiquidos(int x){
+    public  void addDepositoDeLiquidos(int x){
 
         int mask =  x << 3;
         datos |= mask;
     }
 
-    public static void calcularDepositoDeLiquidos(){
+    public  void calcularDepositoDeLiquidos(){
 
         int aux = datos << 20;
         aux = aux >> 23;
@@ -42,25 +50,25 @@ public class Solucion3Guia1 {
     }
 
 
-    public static void addTemperatura(int x){
+    public  void addTemperatura(int x){
         int mask = x << 20;
 
         datos |= mask;
     }
 
-    public static void addAcidez(int x){
+    public  void addAcidez(int x){
         int mask = x<< 12;
         datos |= mask;
     }
 
-    public static void calcularAcidez(){
+    public  void calcularAcidez(){
 
         int aux = datos << 12;
         aux = aux >> 24;
         System.out.println("la acidez es " + aux);
     }
 
-    public static void calcularTemp(){
+    public  void calcularTemp(){
 
         int aux = datos >> 20;
         System.out.println("la temperatura es " + aux);
