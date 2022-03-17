@@ -52,8 +52,9 @@ public class Solucion3Guia1 {
 
     public  void addTemperatura(int x){
         int mask = x << 20;
+        int borrar = 8191;
 
-        datos |= mask;
+        datos = (datos & borrar) | mask;
     }
 
     public  void addAcidez(int x){
