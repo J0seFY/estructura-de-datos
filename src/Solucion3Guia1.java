@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Solucion3Guia1 {
 
     private int datos;
@@ -9,69 +7,40 @@ public class Solucion3Guia1 {
         datos = 0;
         
     }
-    
-    /*
-    public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+    public  void setDepositoDeLiquidos(int x){
 
-        System.out.println("ignrese la temperatura");
-        System.out.println();
-        int temperatura = sc.nextInt();
-        addTemperatura(temperatura);
-        calcularTemp();
-
-        System.out.println("ingrese la acidez");
-        System.out.println();
-        int acidez = sc.nextInt();
-        addAcidez(acidez);
-        calcularAcidez();
-
-
-
-        System.out.println("ingrese el nivel del deposito de liquidos");
-        int nivelDeposito = sc.nextInt();
-        addDepositoDeLiquidos(nivelDeposito);
-        calcularDepositoDeLiquidos();
-    }
-    */
-
-    public  void addDepositoDeLiquidos(int x){
-
-        int mask =  x << 3;
-        datos |= mask;
+        int mask =  x << 2;
+        int borrador = 2147479555 | (1 << 31);
+        datos = (datos & borrador) | mask;
     }
 
-    public  void calcularDepositoDeLiquidos(){
+    public  int getDepositoDeLiquidos(){
 
-        int aux = datos << 20;
-        aux = aux >> 23;
-        System.out.println("el nivel de deposito de liquidos es " + aux);
+        return (datos << 20) >>> 23;
     }
 
 
-    public  void addTemperatura(int x){
+    public  void setTemperatura(int x){
         int mask = x << 20;
         int borrar = 8191;
 
         datos = (datos & borrar) | mask;
     }
 
-    public  void addAcidez(int x){
+    public  void setAcidez(int x){
         int mask = x<< 12;
-        datos |= mask;
+        int borrar = 2146439167 | (1 << 31);
+        datos = (datos & borrar) | mask;
     }
 
-    public  void calcularAcidez(){
+    public  int getAcidez(){
 
-        int aux = datos << 12;
-        aux = aux >> 24;
-        System.out.println("la acidez es " + aux);
+        return (datos << 12)>>>24;
     }
 
-    public  void calcularTemp(){
+    public  int getTemp(){
 
-        int aux = datos >> 20;
-        System.out.println("la temperatura es " + aux);
+        return (datos >>> 20);
     }
 }
