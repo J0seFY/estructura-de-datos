@@ -92,6 +92,16 @@ public class Lista {
         return pointer;
     }
 
+    public int sum(){
+        int sum=0;
+        Nodo pointer = laCabeza;
+        while (pointer != null) {
+            sum += pointer.elObjeto;
+            pointer = pointer.next;
+        }
+        return sum;
+    }
+
 
     public  void elementosMayoresAlPromedio() {
 

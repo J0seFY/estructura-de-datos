@@ -4,6 +4,7 @@ public class TestLista {
 
     public static void main(String [] args) {
         Lista l = new Lista();
+        Lista promedio = new Lista();
 
 
         int min = 1;
@@ -12,11 +13,17 @@ public class TestLista {
             l.InsertaFinal(ThreadLocalRandom.current().nextInt(min,max) + min);
         }
 
+        int prom = l.sum()/l.Size();
+
+        for(int i=0 ; i < l.Size() ; i++){
+            if(l.getNodo(i).elObjeto > prom){
+                promedio.InsertaFinal(l.getNodo(i).elObjeto);
+            }
+        }
+
         l.Print();
         System.out.println();
-        l.elementosMayoresAlPromedio();
-        l.Print();
-
+        promedio.Print();
         //l.elementosMayoresAlPromedio();
 
     }
