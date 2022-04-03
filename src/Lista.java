@@ -137,8 +137,8 @@ public class Lista {
         /*en vista que ya hicimos un proceso para que asegurarnos que la cabecera
         es superior al promedio las comparaciones las hacemos a partir del nodo siguiente
          */
-        while (pointer.next != null){
-            if(pointer.next.elObjeto > promedio ){
+        while (pointer.next != null) {
+            if (pointer.next.elObjeto > promedio) {
 
                 newList.next = pointer.next;
                 newList = newList.next;
@@ -147,8 +147,43 @@ public class Lista {
             pointer = pointer.next;
         }
 
-
-
     }
+
+    public void sort(){
+
+                // Node current will point to head
+                Nodo current = laCabeza, index = null;
+
+                int temp;
+
+                if (laCabeza == null) {
+                    return;
+                }
+                else {
+                    while (current != null) {
+                        // Node index will point to node next to
+                        // current
+                        index = current.next;
+
+                        while (index != null) {
+                            // If current node's data is greater
+                            // than index's node data, swap the data
+                            // between them
+                            if (current.elObjeto > index.elObjeto) {
+                                temp = current.elObjeto;
+                                current.elObjeto = index.elObjeto;
+                                index.elObjeto = temp;
+                            }
+
+                            index = index.next;
+                        }
+                        current = current.next;
+                    }
+                }
+            }
+
+
+
+
 }
 

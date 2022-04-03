@@ -21,7 +21,12 @@ public class TestLista {
             }
         }
 
+
+        promedio.sort();
+
+
         l.Print();
+        System.out.println("\nPromedio: " + prom);
         System.out.println();
         promedio.Print();
         //l.elementosMayoresAlPromedio();
