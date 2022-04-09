@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class Sorting {
+public class SortingLab2 {
 
     public static int[] fillArray(int n) {
         int[] array = new int[n];

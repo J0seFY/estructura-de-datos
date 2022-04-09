@@ -1,8 +1,8 @@
-public class TimeDate {
+public class TimeDateLab1 {
 
     private int fecha;
 
-    public TimeDate() {
+    public TimeDateLab1() {
 
         fecha = 0;
     }
@@ -80,7 +80,7 @@ public class TimeDate {
         return (fecha << 26) >>> 26;
     }
 
-    public boolean sameDate(TimeDate t){
+    public boolean sameDate(TimeDateLab1 t){
         if(getAno() == t.getAno() && getDia() == t.getDia() && getMes() == t.getMes()){
 
             return true;
@@ -89,7 +89,7 @@ public class TimeDate {
         }
     }
 
-    public boolean isBefore(TimeDate t){
+    public boolean isBefore(TimeDateLab1 t){
 
 
         if(t.getAno() < getAno()){
@@ -103,7 +103,7 @@ public class TimeDate {
         return false;
     }
 
-    public boolean isAfter(TimeDate t){
+    public boolean isAfter(TimeDateLab1 t){
 
         if(t.getAno() > getAno()){
             return true;

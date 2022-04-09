@@ -1,8 +1,8 @@
-public class Lista {
+public class ListaLab3 {
 
     private Nodo laCabeza;
 
-    Lista() {
+    ListaLab3() {
         laCabeza = null;
     }
 
@@ -75,6 +75,10 @@ public class Lista {
             this.next = next;
         }
 
+        public Nodo(int elObjeto) {
+            this.elObjeto = elObjeto;
+        }
+
         void Print() {
             System.out.print("- " + elObjeto);
         }
@@ -92,34 +96,26 @@ public class Lista {
         return pointer;
     }
 
-    public int sum(){
+    public int promedio(){
         int sum=0;
         Nodo pointer = laCabeza;
         while (pointer != null) {
             sum += pointer.elObjeto;
             pointer = pointer.next;
         }
-        return sum;
-    }
 
-
-    public  void elementosMayoresAlPromedio() {
-
-        /*primero se crea un algoritmo para calcular el promedio de todos
-        los elementos de la lista
-         */
-
-        int size = 0;
-        int sum = 0;
-        Nodo pointer = laCabeza;
-        while (pointer != null) {
-            sum += pointer.elObjeto;
-            pointer = pointer.next;
+        if(Size() == 0){
+            return sum;
         }
+        return sum/Size();
+    }
+    public void elementosMayoresAlPromedio() {
 
-        int promedio = sum / Size();
 
-        System.out.println("size: " + Size() + " sum: " + sum + " promedio: " + promedio);
+
+        int promedio = promedio();
+
+
 
         /*el siguiente ciclo se utiliza para obtener la nueva
         cabeza
@@ -131,8 +127,9 @@ public class Lista {
         /*se crea un pointer para ir moviendonos a traves de la lista enlazada
         y otro Node llamado newList en el cual iremos enlazando la nueva lista
          */
-        pointer = laCabeza;
-        Nodo newList = laCabeza;
+        Nodo pointer = laCabeza;
+        Nodo newList = new Nodo(laCabeza.elObjeto);
+        Nodo newListHead = newList;
 
         /*en vista que ya hicimos un proceso para que asegurarnos que la cabecera
         es superior al promedio las comparaciones las hacemos a partir del nodo siguiente
@@ -140,13 +137,14 @@ public class Lista {
         while (pointer.next != null) {
             if (pointer.next.elObjeto > promedio) {
 
-                newList.next = pointer.next;
+                newList.next = new Nodo(pointer.next.elObjeto);
                 newList = newList.next;
             }
 
             pointer = pointer.next;
         }
 
+        laCabeza = newListHead;
     }
 
     public void sort(){

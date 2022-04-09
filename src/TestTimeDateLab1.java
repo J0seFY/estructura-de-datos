@@ -1,9 +1,9 @@
-public class TestTimeDate {
+public class TestTimeDateLab1 {
 
     public static void main(String[] args) {
 
-        TimeDate fecha = new TimeDate();
-        TimeDate fechaNueva = new TimeDate();
+        TimeDateLab1 fecha = new TimeDateLab1();
+        TimeDateLab1 fechaNueva = new TimeDateLab1();
 
         fecha.setAno(1999);
         fecha.setMes(3);
