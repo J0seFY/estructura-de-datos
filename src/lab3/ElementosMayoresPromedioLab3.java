@@ -1,3 +1,5 @@
+package lab3;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ElementosMayoresPromedioLab3 {
@@ -69,7 +71,7 @@ public class ElementosMayoresPromedioLab3 {
         nodo newList = head;
 
         /*en vista que ya hicimos un proceso para que asegurarnos que la cabecera
-        es superior al promedio las comparaciones las hacemos a partir del nodo siguiente
+        es superior al promedio las comparaciones las hacemos a partir del lab3.nodo siguiente
          */
         while (pointer.next != null){
             if(pointer.next.val > promedio ){

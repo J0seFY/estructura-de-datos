@@ -1,3 +1,5 @@
+package lab5;
+
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
@@ -126,7 +128,7 @@ public class ArbolDirectorioLab5 {
 
     /*
      * Eliminar la carpeta carpetaN ubicada en path ('root/carpeta_1/.../carpeta_n') junto a todo su subarbol
-     * Usted elige la politica de eliminaci�n del nodo raiz
+     * Usted elige la politica de eliminaci�n del lab3.nodo raiz
      */
     public boolean eliminarCarpeta(String path) {
 

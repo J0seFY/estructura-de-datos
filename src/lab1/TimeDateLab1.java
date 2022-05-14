@@ -1,3 +1,5 @@
+package lab1;
+
 public class TimeDateLab1 {
 
     private int fecha;

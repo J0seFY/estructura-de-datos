@@ -1,4 +1,4 @@
-
+package lab9;
 
 public class BSTreeLab9 {
 	

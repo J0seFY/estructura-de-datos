@@ -1,3 +1,5 @@
+package lab6;
+
 import java.util.LinkedList;
 
 public class TestArbolBinarioLab6 {

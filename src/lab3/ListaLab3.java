@@ -1,3 +1,5 @@
+package lab3;
+
 public class ListaLab3 {
 
     private Nodo laCabeza;
@@ -30,8 +32,8 @@ public class ListaLab3 {
         return tnodos;
     }
 
-    //eliminar un nodo de la lista
-// Elimina el primer nodo n tal que o.elObjeto==o
+    //eliminar un lab3.nodo de la lista
+// Elimina el primer lab3.nodo n tal que o.elObjeto==o
     public void Eliminar(int o) {
         if (!EstaVacia()) {
             if (laCabeza.elObjeto == o) laCabeza = laCabeza.next;
@@ -132,7 +134,7 @@ public class ListaLab3 {
         Nodo newListHead = newList;
 
         /*en vista que ya hicimos un proceso para que asegurarnos que la cabecera
-        es superior al promedio las comparaciones las hacemos a partir del nodo siguiente
+        es superior al promedio las comparaciones las hacemos a partir del lab3.nodo siguiente
          */
         while (pointer.next != null) {
             if (pointer.next.elObjeto > promedio) {

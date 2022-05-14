@@ -1,4 +1,4 @@
-/*
+package lab7;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -92,7 +92,7 @@ public class AbbLab7 {
 		return false;
 	}
 
-	//--- Supone que no existe un nodo con valor = elemento----//
+	//--- Supone que no existe un lab3.nodo con valor = elemento----//
 	public void Insertar(int elemento) {
 		laRaiz = InsertaenAbb(laRaiz, elemento);
 	}

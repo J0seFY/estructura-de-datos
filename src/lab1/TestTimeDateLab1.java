@@ -1,3 +1,5 @@
+package lab1;
+
 public class TestTimeDateLab1 {
 
     public static void main(String[] args) {

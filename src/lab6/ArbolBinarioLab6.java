@@ -1,3 +1,5 @@
+package lab6;
+
 import java.util.LinkedList;
 
 public class ArbolBinarioLab6 {
@@ -75,7 +77,7 @@ public class ArbolBinarioLab6 {
     public LinkedList<ArbolBinarioLab6> nodosAltura(int h){
 
         /*usando una linkedList creada como atributo se realiza un recorrido en preorden
-            para cada nodo se verifica usando la funcion auxilar altura si la altura de dicho nodo es igual a h
+            para cada lab3.nodo se verifica usando la funcion auxilar altura si la altura de dicho lab3.nodo es igual a h
             en caso de serlo de agrega a la linkedList
         */
 
