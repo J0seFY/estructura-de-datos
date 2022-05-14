@@ -103,16 +103,16 @@ public class SortingLab2 {
 
     public static void main(String[] args) {
 
-
+        //se crea una matriz para almacenar los resultados de la medicion de tiempo
 
         long [][] data = new long[9][3];
 
-
+        //se crea un array con la cantidad de datos que se deberan generar en las pruebas
         int [] valorN = {1000,5000,10000,50000,100000
 
                 ,1000000,5000000,10000000,50000000};
 
-
+// el ciclo for prueba los 3 algoritmos al mismo tiempo y usando i se accede a la cantidad de datos de prueba
         for(int i=0 ; i < data.length ; i++){
             int arr_1[] = fillArray(valorN[i]);
             int arr_2[] = arr_1.clone();

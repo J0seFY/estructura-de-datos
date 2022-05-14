@@ -1,6 +1,6 @@
 import java.util.concurrent.ThreadLocalRandom;
 
-public class ElementosMayoresPromedio {
+public class ElementosMayoresPromedioLab3 {
 
 
     /*algoritmo para solucionar ejercicio,recibe como entrada
@@ -9,14 +9,14 @@ public class ElementosMayoresPromedio {
      */
 
     public static void main(String[] args) {
-        Nodo head = new Nodo(0);
-        Nodo pointer = head;
+        nodo head = new nodo(0);
+        nodo pointer = head;
 
         int min = 1;
         int max = 10;
         for(int i=min ; i <= max ; i++){
 
-            pointer.next = new Nodo(ThreadLocalRandom.current().nextInt(min,max) + min);
+            pointer.next = new nodo(ThreadLocalRandom.current().nextInt(min,max) + min);
             pointer = pointer.next;
 
         }
@@ -36,7 +36,7 @@ public class ElementosMayoresPromedio {
 
 
     }
-    public static Nodo elementosMayoresAlPromedio(Nodo head){
+    public static nodo elementosMayoresAlPromedio(nodo head){
 
         /*primero se crea un algoritmo para calcular el promedio de todos
         los elementos de la lista
@@ -44,7 +44,7 @@ public class ElementosMayoresPromedio {
 
         int size = 0;
         int sum = 0;
-        Nodo pointer = head;
+        nodo pointer = head;
         while(pointer != null){
             size++;
             sum += pointer.val;
@@ -66,7 +66,7 @@ public class ElementosMayoresPromedio {
         y otro Node llamado newList en el cual iremos enlazando la nueva lista
          */
         pointer = head;
-        Nodo newList = head;
+        nodo newList = head;
 
         /*en vista que ya hicimos un proceso para que asegurarnos que la cabecera
         es superior al promedio las comparaciones las hacemos a partir del nodo siguiente

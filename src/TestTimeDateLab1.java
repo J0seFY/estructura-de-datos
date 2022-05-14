@@ -21,14 +21,6 @@ public class TestTimeDateLab1 {
         }
         }
 
-        /*
-        fecha.setDia(9);
-        fecha.setMes(2);
-        fecha.setAno(2000);
-        System.out.println(fecha.toString());
-        fecha.setDia(11);
-        System.out.println(fecha.toString());
 
-         */
 
 }

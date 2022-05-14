@@ -11,7 +11,7 @@ public class TimeDateLab1 {
 
         if(anio >= 0 && anio < 4096 ){
 
-            int mask = 1048575;
+            int mask = 1048575;//11111111111111111111
             fecha = (fecha & mask) | (anio << 20);
         }
     }
@@ -24,7 +24,7 @@ public class TimeDateLab1 {
     public void setMes(int mes){
 
         if(mes >= 0 && mes <= 12 ){
-            int mask = -983041;
+            int mask = -983041;//11111111111100001111111
             fecha = (fecha & mask) | mes << 5;
 
         }
@@ -39,7 +39,7 @@ public class TimeDateLab1 {
 
         if(dia >= 0 && dia <= 31){
 
-            int mask = -63489;
+            int mask = -63489;//1111111111111111000001111
             fecha = (fecha & mask) | dia << 11 ;
 
         }
@@ -55,7 +55,7 @@ public class TimeDateLab1 {
 
         if(hora >= 0 && hora <=23){
 
-            int mask = -1985;
+            int mask = -1985;//1111100000111111
             fecha = (fecha & mask) | hora << 6;
         }
 
