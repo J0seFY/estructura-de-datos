@@ -18,7 +18,7 @@ public class MaxDepthLab4 {
         int profundidad =0;
 
         Stack<Character> pila = new Stack<>();
-
+        // se almacenan todos los parentesis en una pila
         for (int i=0 ; i < s.length() ; i++){
             if(s.charAt(i) == '(' || s.charAt(i)==')'){
                 pila.push(s.charAt(i));
@@ -26,6 +26,8 @@ public class MaxDepthLab4 {
         }
 
         int tamanio = pila.size();
+        // se recorre la pila verificando si es un ( , cuando lo es se disminuye el indicador de izquierda y si no aumentando
+        // finalmente se estable la profundidad como el numero mayor entre izquierda o el valor actual de profundidad y se sigue iterando hasta recorrer toda la pila
         for(int i=0 ; i < tamanio ;i++){
             if(pila.peek() == '('){
                 izquierda--;

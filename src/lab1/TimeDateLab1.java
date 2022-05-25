@@ -14,6 +14,7 @@ public class TimeDateLab1 {
         if(anio >= 0 && anio < 4096 ){
 
             int mask = 1048575;//11111111111111111111
+            // se usa para mantener todos los 0 y 1 que tenga el numero
             fecha = (fecha & mask) | (anio << 20);
         }
     }

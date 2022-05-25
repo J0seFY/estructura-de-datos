@@ -22,7 +22,6 @@ public class TestAbbLab7 {
 		a.Insertar(4);
 		a.Insertar(-8);
 
-		a.Imprimir();
 
 
 
@@ -33,6 +32,9 @@ public class TestAbbLab7 {
 		//System.out.println(a.buscar(a.getLaRaiz(),-8));
 
 		System.out.println(" EL complemento es : " + a.Complemento());	// False
+
+		System.out.println();
+
 
 	}
 

@@ -37,6 +37,10 @@ public class AbbLab7 {
 
 	/* Verifica si existen dos enteros a, b en el ABB tal que a+b =0.
 	 */
+
+	// luego de realizar un recorrido por el arbol comienza a verificar por cada nodo
+	// hasta encontrar un nodo en el que exista su complemento
+	//en caso de recorrer todo el arbol y no existir un complemento de ninguno retorna falso
 	public boolean Complemento() {
 
 		recorrido.clear();
@@ -52,7 +56,7 @@ public class AbbLab7 {
 
 	}
 
-
+	// realiza una busquea del nodo con el valor x, usando la propiedad de los abb
 	public boolean buscar(NodoAbb nodo, int x){
 
 		if(nodo == null){

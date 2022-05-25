@@ -55,6 +55,7 @@ public class ArbolDirectorioLab5 {
      * Retornar la cantidad total de carpetas que posee el �rbol de directorios
      */
     public int size() {
+        //se crea un atributo de size el cual va aumentando cada vez que se agrega un nodo, de tal forma que se garantice un costo de O(1)
 
         return size;
     }
@@ -70,6 +71,10 @@ public class ArbolDirectorioLab5 {
 
         Carpeta h = root;
         String nombreCarpeta="";
+        //con StringTokenizer dividimos el path para acceder a las carpetas
+        //este ciclo se encarga de hacer el recorrio usando h como puntero a la raiz
+        // recorreo todos los hijos de h hasta encontrar una carpeta cuyo nombre es el que se busca actualmente
+        //finalmente se recorre hasta que se han buscado todas las carpetas del path
         while (pathStr.hasMoreTokens()){
              nombreCarpeta = pathStr.nextToken();
                 for (Carpeta c : h.hijos) {
@@ -79,6 +84,11 @@ public class ArbolDirectorioLab5 {
                 }
         }
 
+        /*verifica si el puntero h, el cual seria la carpeta donde se encontrara la nueva carpeta a crear
+            no tiene ya una carpeta en su interior con el mismo nombre del que se desea crear
+            y se verifica si el nombre de la penultima carpeta del path es el mismo del puntero
+            finalmente se aumenta el size del arbol y se agrega la carpeta y se retorna verdadero
+         */
         if( !isCarpeta(h.hijos,nombre) && nombreCarpeta.equals(h.nombre)) {
             h.hijos.add(new Carpeta(nombre));
             size++;
@@ -100,13 +110,19 @@ public class ArbolDirectorioLab5 {
      */
     public boolean mover(String path1, String path2) {
 
-
+        //usando el metodo ir se dirige al path de donde se movera a carpeta
+        //almacenamos una referencia a la carpeta a dodnde vamos a mover la carpeta
         Carpeta carpetaQueSeMueve = ir(path1);
 
         Carpeta moverAqui = ir(path2);
+        //en caso de que el path2 nos lleve a un noodo null o la carpeta que queremos mover sea null o ya existe una carpeta con ese nombre
+        //retornara null
         if(moverAqui == null || carpetaQueSeMueve == null || isCarpeta(moverAqui.hijos, carpetaQueSeMueve.nombre) ){
             return false;
         }
+
+        //si lo anterior no se cumple elimina la carpeta de su path originar y
+        // agrega la carpeta como hijo de la carpeta del path 2
         eliminarCarpeta(path1);
         moverAqui.hijos.add(carpetaQueSeMueve);
         size += carpetaQueSeMueve.hijos.size() + 1;
@@ -132,18 +148,27 @@ public class ArbolDirectorioLab5 {
      */
     public boolean eliminarCarpeta(String path) {
 
+        //si es la raiz la que queremos eliminar deja la raiz como null y elimina los hijos
         if(path.equals("root")){
             root.hijos.clear();
             root = null;
             return true;
         }
 
+        /*guarda el path hasta antes de la carpeta a eliminar
+          se almacena una referencia de la carpeta padre y la que vamo a borrar
+         */
 
         String pathAntes = path.substring(0,path.lastIndexOf("/"));
 
         Carpeta padre = ir(pathAntes);
         Carpeta borrar = ir(path);
 
+        /* verifica que ambas no sean null y luego disminuye el size
+            usando el metodo de las linkedList elimina el nodo que deseamos borrar
+            y retorna true
+
+         */
         if(borrar != null && padre != null){
 
             size -= borrar.hijos.size() + 1;
