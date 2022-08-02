@@ -1,4 +1,4 @@
-//debido a la estructura en estrela del grafo los nodos solo estan conectados con el central
+package lab13;//debido a la estructura en estrela del grafo los nodos solo estan conectados con el central
 //solo basta con verificar dos aristas y encontrar el vertice repetido en ambas
 //los dos vertices de las primeras aristas se almacenan en j e i , luego se comparan con la siguiente arista y se retorna el que se repite
 
