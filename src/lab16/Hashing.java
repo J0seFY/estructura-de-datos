@@ -1,6 +1,17 @@
 package lab16;
 
 public class Hashing {
+
+	/*respuestas
+	a) la insercion, eliminicacion y busqueda se tardan mas al aumenta el factor de carga, ya que al aumentar significa que el el arreglo esta cada vez mas lleno
+	y por tanto cada vez hay menos espacios disponibles para almacenar elementos, esto hace que se necesita hacer mas calculos de la funcion hash para encontrar un slot vacio
+	de la misma forma con la busqueda se hace mas probable que sean necesarias mayor cantidad de iteraciones para encontrar el elemento y algo similar sucede con la
+	eliminacion ya que el paso previo efectuar la eliminacion es buscar el nodo en el arreglo.
+
+	b)se crea un nuevo arreglo con el length de 2n respecto al arreglo actual, se insertan todos los elementos del arreglo actual en el nuevo y posteriormente, se elimina
+	el arreglo viejo y se define al nuevo como el arreglo del hashing, se tiene en cuenta el factor de carga ya que el duplicado de tamaño solo se hace cuando el factor de carga
+	supera el valor de 0.75 para asi mantener la eficiencia en la insercion,busqueda y eliminacion
+	 */
 	
 	class Nodo{
 		int key;
@@ -10,10 +21,12 @@ public class Hashing {
 	}
 
 	Nodo [] T;
+	int size; //cantidad de key insertadas en la tabla
 	
 	public Hashing(int m) {
 		T = new Nodo[m];
 		for(int i = 0; i < m; i++) T[i] = null;
+		int size = 0;
 	}
 	
 	// Implementar
@@ -35,6 +48,7 @@ public class Hashing {
 			//verifica si la posicion j esta vacia para guardar ahi la key, en caso de no estar llena se incrementa en 1 en valor de i y se vulve a repetir
 			if(T[j] == null){
 				T[j] = new Nodo(key);
+				size++;
 				return true;
 			}else{
 				i++;
@@ -104,6 +118,14 @@ public class Hashing {
 		return false;
 
 
+	}
+
+	/*usando el atributo size el cual aumenta en cada insercion, la divide en e length del arreglo , dando asi un numero >= 0 y <=1
+	de esta forma se puede saber que tan cargado esta la tabla
+	 */
+
+	public double getFactorDeCarga(){
+		return size/ T.length;
 	}
 
 	public void printHash(){
