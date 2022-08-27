@@ -47,8 +47,19 @@ public class Parsing {
 
 	
 	public static ArbolExpresion getArbol(String postfijo) {
-		for(int i=0; 
-	}postfijo.length:i++){
-      
+	
+        Stack<ArbolExpresion> p = new Stack<ArbolExpresion>();	
+        for(int i=0;postfijo.length:i++){
+          char s= postfijo.charAt(i);
+          ArbolExpresion a = new ArbolExpresion(s);
+          if(isANumber(s)){
+            p.push(a);
+          }else{
+            a.left = p.pop();
+            a.right = p.pop();
+            p.push(a);
+        }
+       return p.pop();
+      }
 }
-}
+
