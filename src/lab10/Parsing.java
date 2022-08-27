@@ -47,6 +47,8 @@ public class Parsing {
 
 	
 	public static ArbolExpresion getArbol(String postfijo) {
-		return null;
-	}
+		for(int i=0; 
+	}postfijo.length:i++){
+      
+}
 }
