@@ -58,17 +58,22 @@ public class MaxHeap {
     private void heapify(int i) {
         // Adjust element i to the correspond pos
         // Implementar esta función
+        //Almacena las posiciones de los hijos izquierdo y derecho
         int l = leftChild(i);
         int r = rightChild(i);
         int tam = size-1;
         // pos de elemento mayor
+        //Verifica que l y r no sean mayores al tamaño del heap
         if(l <= tam) {
             int k;
+ 
             if(r <= tam) {
                 k = items[r] >= items[l] ? r : l;
             }else{
                 k = l;
             }
+            //Almacena en k la posicion del numero mayor entre l y r
+            //si la clave almacenada en la posicion k es mayor a su padre intercambia el padre por k, posteriormente llama recuesivamente a heapify en k para verificar que no se rompa la condicion del hep, casa llamada recursiva hace que se vaya descendiendo a traves del heap. 
             if (items[k] > items[i]) {
                 swap(i, k);
                 heapify(k);
