@@ -47,7 +47,7 @@ public class Parsing {
 
 	
 	public static ArbolExpresion getArbol(String postfijo) {
-	
+	//Se crea una pila y se recorre cada elemento del string, cuando corresponde a un numero se crea un arbol con esa simbolo y se agrega a la pila, cuando no son un numero los primeross elementos de la pila se agregan como hijos del arbol recoen creado
         Stack<ArbolExpresion> p = new Stack<ArbolExpresion>();	
         for(int i=0;postfijo.length:i++){
           char s= postfijo.charAt(i);
@@ -59,6 +59,7 @@ public class Parsing {
             a.right = p.pop();
             p.push(a);
         }
+//Finalmente se retorna la cabeza de la pila
        return p.pop();
       }
 }
